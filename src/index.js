@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import {BrowserRouter, Route} from 'react-router-dom';
+import HomePage from './components/HomePage';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+    {/* <Switch > */}
+        <Route exact path="/" component={App}/>
+        <Route path="/:userid" render={(props)=><HomePage {...props}/>}/>
+    {/* </Switch> */}
+    </BrowserRouter>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

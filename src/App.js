@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import SignInPage from'./components/SignInPage'
+import WelcomePage from './components/WelcomePage'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SignInPage/>
+        <WelcomePage/>
       </header>
     </div>
   );
