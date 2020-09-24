@@ -32,7 +32,7 @@ class SignInPage extends React.Component{
     }
 
     render() {
-        let afterLogin =<p>login failed</p>
+        let afterLogin;
         
         if(this.state.loginAccepted){
             console.log(this.state.userId)
