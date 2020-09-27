@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
+import Categories from './Categories';
 
 class HomePage extends React.Component{
     constructor(props){
@@ -16,13 +17,14 @@ class HomePage extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="bg-secondary">
                 <NavBar />
                 <div>
                     <span className="welcomeMessage">Welcome {this.state.userID}</span>
                     {/* <span> */}
                         <SearchBar />
                     {/* </span> */}
+                    <Categories />
                 </div>
                 
             </div>
