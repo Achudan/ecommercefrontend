@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css';
 import axios from 'axios';
-import SelectSearch from 'react-select-search';
+// import SelectSearch from 'react-select-search';
 export default class SearchBar extends React.Component {
     constructor() {
         super()
