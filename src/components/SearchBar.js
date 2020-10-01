@@ -18,29 +18,30 @@ export default class SearchBar extends React.Component {
         console.log('request'+ request)
         axios.get("http://localhost:5000/filterProducts",{params:request})
         .then((res)=>{
-            // this.setState({displaydata:res.data}),
-            res.data.forEach((element,key) => {
-                let joined = this.state.displaydata.concat('new value');
-                this.setState({displaydata:joined})
-            });        
+            this.setState({displaydata:res.data})
+            // res.data.forEach((element,key) => {
+            //     let joined = this.state.displaydata.concat(element);
+            //     this.setState({displaydata:joined})
+            // });
+            console.log(this.state.displaydata)      
         })
         .catch((error)=>{
             console.log(error)
         })
     }
     render() {
-       let para = <SelectSearch 
-       options={[]}
-       getOptions={this.state.displaydata}
-       search
-       placeholder="Your favorite drink"
+    //    let para = <SelectSearch 
+    //    options={[]}
+    //    getOptions={this.state.displaydata}
+    //    search
+    //    placeholder="Your favorite drink"
        
-       /> ;
-    // let para =[]
-    // this.state.displaydata.forEach((element,key) => {
-    //     para.push(<p key={key}> {`${element.fullName} in ${element.presentIn}`}</p>)
+    //    /> ;
+    let para =[]
+    this.state.displaydata.forEach((element,key) => {
+        para.push(<p key={key}> {`${element.fullName} in ${element.presentIn}`}</p>)
 
-    // });
+    });
         return (
             <div className="wrap">
                 <div className="searchBar">
