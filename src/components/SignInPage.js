@@ -40,7 +40,6 @@ class SignInPage extends React.Component {
             
         ).then(
             res => {
-                console.log(res.data)
                 this.setState({userId:res.data, loginAccepted: true})
             }
         ).catch((error)=>{

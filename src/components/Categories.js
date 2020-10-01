@@ -13,7 +13,6 @@ class Categories extends React.Component {
             "http://localhost:5000/getCategories"
         ).then(
             (res) => {
-                console.log(res.data)
                 this.setState({ categoriesInState: res.data })
             }
         )
@@ -26,10 +25,9 @@ class Categories extends React.Component {
     render() {
         let categoriesCards
         if (this.state.categoriesInState) {
-            categoriesCards = this.state.categoriesInState.map((items) => {
-                console.log(items._id)
+            categoriesCards = this.state.categoriesInState.map((items, key) => {
                 return (
-                        <CategoryCards categoryName={items.category} categoryid={items._id} />
+                        <CategoryCards categoryName={items.category} categoryid={items._id} key={key}/>
                 )
             })
 
